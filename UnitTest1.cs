@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
 using OpenQA.Selenium.Chrome;
@@ -26,10 +26,20 @@ namespace Subscription_Test
         [TestMethod]
         public void FitnessSub()
         {
+            //Fitness Header
             _test.InitializeBrowse();
             Thread.Sleep(3000);
-            _fs.FitnessHeader_Invalid();
+            _fs.FitnessHeaderValidation();
+            _fs.FitnessHeaderInvalid();
             _fs.FitnessHeaderNewEmail();
+            _fs.FitnessHeaderExisting();
+            //Fitness Footer
+            _fs.FitnessFooterValidation();
+            _fs.FitnessFooterInvalid();
+            _fs.FitnessFooterNewEmail();
+            _fs.FitnessFooterExisting();
+
+            
         }
     }
 }
